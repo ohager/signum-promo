@@ -23,10 +23,10 @@ const WorkingProcessSection = ({
     <Box {...sectionWrapper} as="section">
       <Container>
         <Box {...secTitleWrapper}>
-          <Text {...secText} content="WORKING PROCESS" />
+          <Text {...secText} content="PARTICIPATION PROCESS" />
           <Heading
             {...secHeading}
-            content="Our Featured Service that We Provide"
+            content="Follow the steps to participate"
           />
         </Box>
 

@@ -22,51 +22,51 @@ import { pieChart } from 'react-icons-kit/icomoon/pieChart';
 import { briefcase } from 'react-icons-kit/fa/briefcase';
 
 export const MENU_ITEMS = [
-  {
-    label: 'Home',
-    path: '#banner_section',
-    offset: '0',
-  },
-  {
-    label: 'Feature',
-    path: '#feature_section',
-    offset: '0',
-  },
-  {
-    label: 'Pricing',
-    path: '#pricing_section',
-    offset: '0',
-  },
-  {
-    label: 'Testimonial',
-    path: '#testimonial_section',
-    offset: '0',
-  },
-  {
-    label: 'FAQ',
-    path: '#faq_section',
-    offset: '0',
-  },
+  // {
+  //   label: 'Home',
+  //   path: '#banner_section',
+  //   offset: '0',
+  // },
+  // {
+  //   label: 'Feature',
+  //   path: '#feature_section',
+  //   offset: '0',
+  // },
+  // {
+  //   label: 'Pricing',
+  //   path: '#pricing_section',
+  //   offset: '0',
+  // },
+  // {
+  //   label: 'Testimonial',
+  //   path: '#testimonial_section',
+  //   offset: '0',
+  // },
+  // {
+  //   label: 'FAQ',
+  //   path: '#faq_section',
+  //   offset: '0',
+  // },
 ];
 
 export const PROCESS_ITEMS = [
   {
     image: Process1,
-    title: 'Download our app',
+    title: <>Install the Phoenix Wallet</>,
     description:
-      'Get your blood tests delivered at home collect a sample from the news Get your blood tests delivered with terms.',
+      <>If not already done, install the <a href="https://play.google.com/store/apps/details?id=com.signum.phoenix" target="_blank" rel="noreferrer noopener">Android</a> or <a href="https://phoenix-wallet.rocks" rel="noreferrer noopener">desktop version</a> of the Phoenix Wallet'</>
   },
   {
     image: Process2,
     title: 'Create a free account',
     description:
-      'Get your blood tests delivered at home collect a sample from the news Get your blood tests delivered with terms.',
+      <>If you don't have a Signum account yet, create a new account and acquire some Signa at our <a href="https://www.signum.network/exchanges.html" target="_blank" rel="noreferrer noopener">supporting exchanges</a>, or ask for a donation in our <a href="https://discord.gg/9rH2bbCNpe" rel="noreferrer noopener">community</a></>,
   },
   {
     image: Process3,
-    title: 'Now Start your journey',
+    title: 'Click Participate Now Button',
     description:
-      'Get your blood tests delivered at home collect a sample from the news Get your blood tests delivered with terms.',
+      'Once you have at least 0.5 SIGNA come back to this site and click the green button. This will open your wallet with all necessary data prefilled. Just confirm the transaction and you may win the raffle',
   },
 ];
 

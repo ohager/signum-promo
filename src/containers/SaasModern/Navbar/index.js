@@ -13,8 +13,8 @@ import { DrawerContext } from 'common/contexts/DrawerContext';
 import { MENU_ITEMS } from 'common/data/SaasModern';
 import ScrollSpyMenu from 'common/components/ScrollSpyMenu';
 
-import LogoImage from 'common/assets/image/saasModern/logo-white.png';
-import LogoImageAlt from 'common/assets/image/saasModern/logo.png';
+import LogoImage from 'common/assets/image/signum-logo-white.png';
+import LogoImageAlt from 'common/assets/image/signum-logo-black.png';
 
 const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
   const { state, dispatch } = useContext(DrawerContext);
@@ -31,16 +31,16 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
       <Container>
         <Box {...row}>
           <Logo
-            href="#"
+            href="https://signum.network"
             logoSrc={LogoImage}
-            title="Portfolio"
+            title="Signum Logo"
             logoStyle={logoStyle}
             className="main-logo"
           />
           <Logo
             href="#"
             logoSrc={LogoImageAlt}
-            title="Portfolio"
+            title="Signum Logo"
             logoStyle={logoStyle}
             className="logo-alt"
           />
@@ -50,11 +50,11 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
               menuItems={MENU_ITEMS}
               offset={-70}
             />
-            <Link href="#">
-              <a className="navbar_button">
-                <Button {...button} title="GET STARTED" />
-              </a>
-            </Link>
+            {/*<Link href="#">*/}
+            {/*  <a className="navbar_button">*/}
+            {/*    <Button {...button} title="GET STARTED" />*/}
+            {/*  </a>*/}
+            {/*</Link>*/}
             <Drawer
               width="420px"
               placement="right"
@@ -68,11 +68,11 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
                 drawerClose={true}
                 offset={-100}
               />
-              <Link href="#">
-                <a className="navbar_drawer_button">
-                  <Button {...button} title="GET STARTED" />
-                </a>
-              </Link>
+              {/*<Link href="#">*/}
+              {/*  <a className="navbar_drawer_button">*/}
+              {/*    <Button {...button} title="GET STARTED" />*/}
+              {/*  </a>*/}
+              {/*</Link>*/}
             </Drawer>
           </Box>
         </Box>

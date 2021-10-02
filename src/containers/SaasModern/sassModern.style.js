@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-
+import colors from 'common/theme/saasModern/colors'
 export const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Roboto', sans-serif;
@@ -13,7 +13,11 @@ export const GlobalStyle = createGlobalStyle`
   h6 {
     font-family: 'Roboto', sans-serif;
   }
-
+  
+  a, a:hover {
+    color: ${colors.primary};
+  }
+  
   section {
     position: relative;
   }

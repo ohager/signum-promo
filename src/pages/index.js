@@ -49,14 +49,14 @@ const SaasModern = () => {
           </Sticky>
           <BannerSection />
           <WorkingProcessSection />
-          <InfoSection />
-          <FeatureSection />
-          <UpdateScreen />
-          <PricingSection />
-          <PartnerSection />
-          <TestimonialSection />
-          <FaqSection />
-          <TrialSection />
+          {/*<InfoSection />*/}
+          {/*<FeatureSection />*/}
+          {/*<UpdateScreen />*/}
+          {/*<PricingSection />*/}
+          {/*<PartnerSection />*/}
+          {/*<TestimonialSection />*/}
+          {/*<FaqSection />*/}
+          {/*<TrialSection />*/}
           <Footer />
         </ContentWrapper>
       </Fragment>

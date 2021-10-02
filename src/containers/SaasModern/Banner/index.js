@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components'
 import Link from 'next/link';
 import Icon from 'react-icons-kit';
 import Fade from 'react-reveal/Fade';
@@ -10,66 +11,75 @@ import Button from 'common/components/Button';
 import NextImage from 'common/components/NextImage';
 import Container from 'common/components/UI/Container';
 import TiltShape from '../TiltShape';
-import { BannerWrapper, DiscountWrapper, DiscountLabel } from './banner.style';
+import {BannerWrapper, DiscountWrapper, DiscountLabel} from './banner.style';
 import BannerImage from 'common/assets/image/saasModern/banner-image.png';
-import { ic_play_circle_filled } from 'react-icons-kit/md/ic_play_circle_filled';
+import {ic_play_circle_filled} from 'react-icons-kit/md/ic_play_circle_filled';
+import ReactPlayer from "react-player/youtube";
+
+const SecLinkProps = {target:'_blank', rel:"noreferrer noopener"}
+
+const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiNTAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlfQ'
 
 const BannerSection = ({
-  row,
-  contentWrapper,
-  discountAmount,
-  discountText,
-  title,
-  description,
-  imageWrapper,
-  buttonWrapper,
-  button,
-  fillButton,
-}) => {
+                         row,
+                         contentWrapper,
+                         discountAmount,
+                         discountText,
+                         title,
+                         description,
+                         imageWrapper,
+                         buttonWrapper,
+                         button,
+                         fillButton,
+                       }) => {
   return (
     <BannerWrapper id="banner_section">
-      <TiltShape />
+      <TiltShape/>
       <Container>
         <Box {...row}>
           <Box {...contentWrapper}>
-            <DiscountWrapper>
-              <DiscountLabel>
-                <Text {...discountAmount} content="25% Save" />
-                <Text
-                  {...discountText}
-                  content="for first month trail version"
-                />
-              </DiscountLabel>
-            </DiscountWrapper>
+            {/*<DiscountWrapper>*/}
+            {/*  <DiscountLabel>*/}
+            {/*    <Text {...discountAmount} content="25% Save" />*/}
+            {/*    <Text*/}
+            {/*      {...discountText}*/}
+            {/*      content="for first month trail version"*/}
+            {/*    />*/}
+            {/*  </DiscountLabel>*/}
+            {/*</DiscountWrapper>*/}
             <Heading
               {...title}
-              content="Ultimate Platform to monitor your best workflow."
+              content="October Meetup Raffle"
             />
             <Text
               {...description}
-              content="For Enhanced performance we use LiteSpeed Web Server, HTTP/2, PHP7. We make your website faster, which will help you to increase search ranking!"
+              content="We are running a smart contract based Raffle for the October Dev Meet. Click the button and participate"
             />
             <Box {...buttonWrapper}>
-              <Link href="#">
-                <a>
-                  <Button {...fillButton} title="FREE TRIAL" />
+                <a href={RaffleDeepLink}>
+                  <Button {...fillButton} title="PARTICIPATE NOW"/>
                 </a>
-              </Link>
-              <Link href="#">
-                <a>
-                  <Button
-                    {...button}
-                    title="WATCH VIDEO"
-                    icon={<Icon icon={ic_play_circle_filled} size={30} />}
-                    iconPosition="left"
-                  />
-                </a>
-              </Link>
+              <a href="https://www.youtube.com/watch?v=nLrWJWTyIB8" {...SecLinkProps}>
+                <Button
+                  {...button}
+                  title="WATCH LAST MEETUP"
+                  icon={<Icon icon={ic_play_circle_filled} size={30}/>}
+                  iconPosition="left"
+                />
+              </a>
             </Box>
           </Box>
           <Box {...imageWrapper}>
             <Fade bottom>
-              <NextImage src={BannerImage} alt="banner image" />
+              <div>
+                <ReactPlayer url='https://www.youtube.com/watch?v=khT-8kKDVgc'
+                             width={1280}
+                             height={720}
+                             loop
+                             // light
+                />
+              </div>
+              {/*<NextImage src={BannerImage} alt="banner image"/>*/}
             </Fade>
           </Box>
         </Box>
