@@ -254,101 +254,39 @@ export const FAQ_DATA = [
 
 export const FOOTER_WIDGET = [
   {
-    title: 'About Us',
+    title: 'Signum Network',
     menuItems: [
       {
-        url: '#',
-        text: 'Support Center',
+        url: 'https://www.signum.network/',
+        text: 'Home',
       },
       {
-        url: '#',
-        text: 'Customer Support',
-      },
-      {
-        url: '#',
-        text: 'About Us',
-      },
-      {
-        url: '#',
-        text: 'Copyright',
-      },
-      {
-        url: '#',
-        text: 'Popular Campaign',
-      },
-    ],
-  },
-  {
-    title: 'Our Information',
-    menuItems: [
-      {
-        url: '#',
-        text: 'Return Policy',
-      },
-      {
-        url: '#',
+        url: 'https://www.signum.network/privacypolicy.html',
         text: 'Privacy Policy',
       },
       {
-        url: '#',
-        text: 'Terms & Conditions',
-      },
-      {
-        url: '#',
-        text: 'Site Map',
-      },
-      {
-        url: '#',
-        text: 'Store Hours',
+        url: 'https://www.signum.network/disclaimer.html',
+        text: 'Disclaimer',
       },
     ],
   },
   {
-    title: 'My Account',
+    title: 'Community',
     menuItems: [
       {
-        url: '#',
-        text: 'Press inquiries',
+        url: 'https://discord.gg/QHZkF4KHDS',
+        text: 'Discord',
       },
       {
-        url: '#',
-        text: 'Social media directories',
+        url: 'https://t.me/signumnetwork',
+        text: 'Telegram',
       },
       {
-        url: '#',
-        text: 'Images & B-roll',
-      },
-      {
-        url: '#',
-        text: 'Permissions',
-      },
-      {
-        url: '#',
-        text: 'Speaker requests',
+        url: 'https://twitter.com/signum_official',
+        text: 'Twitter',
       },
     ],
-  },
-  {
-    title: 'Policy',
-    menuItems: [
-      {
-        url: '#',
-        text: 'Application security',
-      },
-      {
-        url: '#',
-        text: 'Software principles',
-      },
-      {
-        url: '#',
-        text: 'Unwanted software policy',
-      },
-      {
-        url: '#',
-        text: 'Responsible supply chain',
-      },
-    ],
-  },
+  }
 ];
 
 export const FEATURES = [

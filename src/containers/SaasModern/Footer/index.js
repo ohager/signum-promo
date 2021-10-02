@@ -8,7 +8,7 @@ import Logo from 'common/components/UIElements/Logo';
 import Container from 'common/components/UI/Container';
 import FooterWrapper, { List, ListItem } from './footer.style';
 
-import LogoImage from 'common/assets/image/saasModern/logo.png';
+import LogoImage from 'common/assets/image/signum-logo-vert-black.png';
 
 import { FOOTER_WIDGET } from 'common/data/SaasModern';
 
@@ -27,13 +27,11 @@ const Footer = ({
         <Box className="row" {...row}>
           <Box {...colOne}>
             <Logo
-              href="#"
+              href="https://signum.network"
               logoSrc={LogoImage}
               title="Hosting"
               logoStyle={logoStyle}
             />
-            <Text content="hello@redq.io" {...textStyle} />
-            <Text content="+479-443-9334" {...textStyle} />
           </Box>
           {/* End of footer logo column */}
           <Box {...colTwo}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import Link from 'next/link';
@@ -8,35 +8,82 @@ import Box from 'common/components/Box';
 import Text from 'common/components/Text';
 import Heading from 'common/components/Heading';
 import Button from 'common/components/Button';
-import NextImage from 'common/components/NextImage';
 import Container from 'common/components/UI/Container';
 import TiltShape from '../TiltShape';
 import {BannerWrapper, DiscountWrapper, DiscountLabel} from './banner.style';
-import BannerImage from 'common/assets/image/saasModern/banner-image.png';
 import {ic_play_circle_filled} from 'react-icons-kit/md/ic_play_circle_filled';
 import ReactPlayer from "react-player/youtube";
 
-const SecLinkProps = {target:'_blank', rel:"noreferrer noopener"}
+const SecLinkProps = {target: '_blank', rel: "noreferrer noopener"}
 
 const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiNTAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlfQ'
 
+const PlayerWrapper = styled.div`
+  height: 240px;
+  @media (min-width: 480px) {
+    height: 320px;
+  }
+  @media (min-width: 768px) {
+    height: 480px;
+  }
+  @media (min-width: 1280px) {
+    height: 640px;
+  }
+  @media (min-width: 1280px) {
+    height: 720px;
+  }
+`
+
 const BannerSection = ({
-                         row,
+                         col,
                          contentWrapper,
                          discountAmount,
                          discountText,
                          title,
                          description,
-                         imageWrapper,
+                         videoWrapper,
                          buttonWrapper,
                          button,
                          fillButton,
                        }) => {
+
+  // const {height, width} = useWindowDimensions()
+  // const [dimension, setDimension] = useState({w: 1280, h: 1280 * VidFactor})
+
+  // const updateVideoDimensions = () => {
+  //   setDimension({w: 480, h: 480 * VidFactor})
+  //
+  //   console.log('updateVideoDimensions', 100)
+  //
+  //   if(width < 480) {
+  //     setDimension({w: 320, h: 320 * VidFactor})
+  //   }
+  //   else if(width > 1400) {
+  //     setDimension({w: 1280, h: 1280 * VidFactor})
+  //   }
+  //   else if(width > 1280) {
+  //     setDimension({w: 720, h: 720 * VidFactor})
+  //   }
+  //   else if (width > 720) {
+  //     setDimension({w: 640, h: 640 * VidFactor})
+  //   }
+  //   else if(width > 640){
+  //     setDimension({w: 480, h: 480 * VidFactor})
+  //   }
+  // }
+  // useEffect(() => {
+  //   setTimeout(updateVideoDimensions, 1000)
+  // }, [])
+  //
+  // useEffect(() => {
+  //   updateVideoDimensions()
+  // }, [height, width])
+
   return (
     <BannerWrapper id="banner_section">
       <TiltShape/>
       <Container>
-        <Box {...row}>
+        <Box {...col}>
           <Box {...contentWrapper}>
             {/*<DiscountWrapper>*/}
             {/*  <DiscountLabel>*/}
@@ -56,9 +103,9 @@ const BannerSection = ({
               content="We are running a smart contract based Raffle for the October Dev Meet. Click the button and participate"
             />
             <Box {...buttonWrapper}>
-                <a href={RaffleDeepLink}>
-                  <Button {...fillButton} title="PARTICIPATE NOW"/>
-                </a>
+              <a href={RaffleDeepLink}>
+                <Button {...fillButton} title="PARTICIPATE NOW"/>
+              </a>
               <a href="https://www.youtube.com/watch?v=nLrWJWTyIB8" {...SecLinkProps}>
                 <Button
                   {...button}
@@ -69,16 +116,16 @@ const BannerSection = ({
               </a>
             </Box>
           </Box>
-          <Box {...imageWrapper}>
+          <Box {...videoWrapper}>
             <Fade bottom>
-              <div>
-                <ReactPlayer url='https://www.youtube.com/watch?v=khT-8kKDVgc'
-                             width={1280}
-                             height={720}
+              <PlayerWrapper>
+                <ReactPlayer
+                  url='https://www.youtube.com/watch?v=khT-8kKDVgc'
+                             width="100%"
+                             height="100%"
                              loop
-                             // light
                 />
-              </div>
+              </PlayerWrapper>
               {/*<NextImage src={BannerImage} alt="banner image"/>*/}
             </Fade>
           </Box>
@@ -89,22 +136,23 @@ const BannerSection = ({
 };
 
 BannerSection.propTypes = {
-  row: PropTypes.object,
+  col: PropTypes.object,
   contentWrapper: PropTypes.object,
   discountAmount: PropTypes.object,
   discountText: PropTypes.object,
   title: PropTypes.object,
   description: PropTypes.object,
-  imageWrapper: PropTypes.object,
+  videoWrapper: PropTypes.object,
   buttonWrapper: PropTypes.object,
   button: PropTypes.object,
   fillButton: PropTypes.object,
 };
 
 BannerSection.defaultProps = {
-  row: {
+  col: {
     flexBox: true,
     flexWrap: 'wrap',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -135,6 +183,10 @@ BannerSection.defaultProps = {
     mb: 0,
     as: 'span',
     mr: '0.4em',
+  },
+  videoWrapper: {
+    width: "100%",
+    height: "100%"
   },
   discountText: {
     fontSize: ['13px', '14px', '14px', '14px', '14px'],
