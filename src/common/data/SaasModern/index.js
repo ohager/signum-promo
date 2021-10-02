@@ -64,9 +64,9 @@ export const PROCESS_ITEMS = [
   },
   {
     image: Process3,
-    title: 'Click Participate Now Button',
+    title: 'Click Button Or Scan QR Code',
     description:
-      'Once you have at least 0.5 SIGNA come back to this site and click the green button. This will open your wallet with all necessary data prefilled. Just confirm the transaction and you may win the raffle',
+      'Once you have at least 0.4 SIGNA come back to this site and click the green button, or scan the QR Code. This will open your wallet with all necessary data prefilled. Just confirm the transaction and you may win the raffle',
   },
 ];
 

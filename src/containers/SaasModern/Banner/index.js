@@ -16,7 +16,6 @@ import ReactPlayer from "react-player/youtube";
 
 const SecLinkProps = {target: '_blank', rel: "noreferrer noopener"}
 
-// const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiNTAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlfQ'
 const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiMzAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlLCJtZXNzYWdlSXNUZXh0Ijp0cnVlfQ='
 
 const PlayerWrapper = styled.div`
@@ -68,7 +67,12 @@ const BannerSection = ({
             />
             <Text
               {...description}
-              content="We are running a smart contract based Raffle for the October Dev Meet. Click the button and participate"
+              content="We are running a smart contract based Raffle for the October Dev Meetup. Click the button and participate"
+            />
+
+            <Text
+              {...description}
+              content="We are running a smart contract based Raffle for the October Dev Meetup. Click the button and participate"
             />
             <Box {...buttonWrapper}>
               <a href={RaffleDeepLink}>
