@@ -32,32 +32,25 @@ export default class CustomDocument extends Document {
         <Head>
           <link rel="icon" href="/favicon.png"/>
 
-          <!-- Primary Meta Tags -->
           <title>Signum Dev Meetup Promo</title>
           <meta name="title" content="Signum Dev Meetup Promo"/>
           <meta name="description" content="Checkout our upcoming Dev Meetup on Discord"/>
-
-          <!-- Open Graph / Facebook -->
           <meta property="og:type" content="website"/>
           <meta property="og:url" content="https://signum-promo.vercel.app"/>
           <meta property="og:title" content="Signum Dev Meetup Promo"/>
           <meta property="og:description" content="Checkout our upcoming Dev Meetup on Discord"/>
-          <meta property="og:image"
-                content="https://signum-promo.vercel.app/signum-promo.jpg">
-
-            <!-- Twitter -->
-            <meta property="twitter:card" content="summary_large_image"/>
-            <meta property="twitter:url" content="https://signum-promo.vercel.app/"/>
-            <meta property="twitter:title" content="Signum Dev Meetup Promo"/>
-            <meta property="twitter:description" content="Checkout our upcoming Dev Meetup on Discord"/>
-            <meta property="twitter:image"
-                  content="https://signum-promo.vercel.app/signum-promo.jpg"/>
+          <meta property="og:image" content="https://signum-promo.vercel.app/signum-promo.jpg"/>
+          <meta property="twitter:card" content="summary_large_image"/>
+          <meta property="twitter:url" content="https://signum-promo.vercel.app/"/>
+          <meta property="twitter:title" content="Signum Dev Meetup Promo"/>
+          <meta property="twitter:description" content="Checkout our upcoming Dev Meetup on Discord"/>
+          <meta property="twitter:image" content="https://signum-promo.vercel.app/signum-promo.jpg"/>
         </Head>
         <body>
         <Main/>
         <NextScript/>
         </body>
       </Html>
-  );
+    );
   }
-  }
+}
