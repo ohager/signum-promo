@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, {Html, Head, Main, NextScript} from 'next/document';
+import {ServerStyleSheet} from 'styled-components';
 
 export default class CustomDocument extends Document {
   static async getInitialProps(ctx) {
@@ -25,21 +25,39 @@ export default class CustomDocument extends Document {
       sheet.seal();
     }
   }
+
   render() {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" href="/favicon.png" />
-          {/* <link
-            rel="icon"
-            href="https://react-next-landing.redq.io/_next/static/images/favicon-ec2551afb2782a53fb493269d1ba4efe.png"
-          /> */}
+          <link rel="icon" href="/favicon.png"/>
+
+          <!-- Primary Meta Tags -->
+          <title>Signum Dev Meetup Promo</title>
+          <meta name="title" content="Signum Dev Meetup Promo"/>
+          <meta name="description" content="Checkout our upcoming Dev Meetup on Discord"/>
+
+          <!-- Open Graph / Facebook -->
+          <meta property="og:type" content="website"/>
+          <meta property="og:url" content="https://signum-promo.vercel.app"/>
+          <meta property="og:title" content="Signum Dev Meetup Promo"/>
+          <meta property="og:description" content="Checkout our upcoming Dev Meetup on Discord"/>
+          <meta property="og:image"
+                content="https://signum-promo.vercel.app/signum-promo.jpg">
+
+            <!-- Twitter -->
+            <meta property="twitter:card" content="summary_large_image"/>
+            <meta property="twitter:url" content="https://signum-promo.vercel.app/"/>
+            <meta property="twitter:title" content="Signum Dev Meetup Promo"/>
+            <meta property="twitter:description" content="Checkout our upcoming Dev Meetup on Discord"/>
+            <meta property="twitter:image"
+                  content="https://signum-promo.vercel.app/signum-promo.jpg"/>
         </Head>
         <body>
-          <Main />
-          <NextScript />
+        <Main/>
+        <NextScript/>
         </body>
       </Html>
-    );
+  );
   }
-}
+  }
