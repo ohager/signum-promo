@@ -16,7 +16,8 @@ import ReactPlayer from "react-player/youtube";
 
 const SecLinkProps = {target: '_blank', rel: "noreferrer noopener"}
 
-const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiNTAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlfQ'
+// const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiNTAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlfQ'
+const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiMzAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlLCJtZXNzYWdlSXNUZXh0Ijp0cnVlfQ='
 
 const PlayerWrapper = styled.div`
   height: 240px;
@@ -46,39 +47,6 @@ const BannerSection = ({
                          button,
                          fillButton,
                        }) => {
-
-  // const {height, width} = useWindowDimensions()
-  // const [dimension, setDimension] = useState({w: 1280, h: 1280 * VidFactor})
-
-  // const updateVideoDimensions = () => {
-  //   setDimension({w: 480, h: 480 * VidFactor})
-  //
-  //   console.log('updateVideoDimensions', 100)
-  //
-  //   if(width < 480) {
-  //     setDimension({w: 320, h: 320 * VidFactor})
-  //   }
-  //   else if(width > 1400) {
-  //     setDimension({w: 1280, h: 1280 * VidFactor})
-  //   }
-  //   else if(width > 1280) {
-  //     setDimension({w: 720, h: 720 * VidFactor})
-  //   }
-  //   else if (width > 720) {
-  //     setDimension({w: 640, h: 640 * VidFactor})
-  //   }
-  //   else if(width > 640){
-  //     setDimension({w: 480, h: 480 * VidFactor})
-  //   }
-  // }
-  // useEffect(() => {
-  //   setTimeout(updateVideoDimensions, 1000)
-  // }, [])
-  //
-  // useEffect(() => {
-  //   updateVideoDimensions()
-  // }, [height, width])
-
   return (
     <BannerWrapper id="banner_section">
       <TiltShape/>
