@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
-import Link from 'next/link';
+import Link from 'common/components/Link';
 import Icon from 'react-icons-kit';
 import Fade from 'react-reveal/Fade';
 import Box from 'common/components/Box';
@@ -12,6 +12,7 @@ import Container from 'common/components/UI/Container';
 import TiltShape from '../TiltShape';
 import {BannerWrapper, DiscountWrapper, DiscountLabel} from './banner.style';
 import {ic_play_circle_filled} from 'react-icons-kit/md/ic_play_circle_filled';
+import {ic_emoji_events_twotone} from 'react-icons-kit/md/ic_emoji_events_twotone'
 import ReactPlayer from "react-player/youtube";
 
 const SecLinkProps = {target: '_blank', rel: "noreferrer noopener"}
@@ -39,6 +40,8 @@ const BannerSection = ({
                          contentWrapper,
                          discountAmount,
                          discountText,
+                         winnerText,
+                         winnerWrapper,
                          title,
                          description,
                          videoWrapper,
@@ -69,14 +72,25 @@ const BannerSection = ({
               {...description}
               content="We are running a smart contract based Raffle for the October Dev Meetup. Click the button and participate"
             />
-            <Box {...buttonWrapper}>
-              <a href={RaffleDeepLink}>
-                <Button {...fillButton} title="PARTICIPATE NOW"/>
+
+
+            <Box {...winnerWrapper} {...col}>
+              <Text {...winnerText} content="The winner is"></Text>
+              <a href="https://explorer.signum.network/?action=transaction&id=5923442789120591728" {...SecLinkProps}>
+                <Button
+                  {...button}
+                  title="S-BNUE-9X8X-ATP8-FF3YB"
+                  icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}
+                  iconPosition="left"
+                />
               </a>
+            </Box>
+
+            <Box {...buttonWrapper}>
               <a href="https://www.youtube.com/watch?v=nLrWJWTyIB8" {...SecLinkProps}>
                 <Button
                   {...button}
-                  title="WATCH LAST MEETUP"
+                  title="WATCH SEPTEMBER MEETUP"
                   icon={<Icon icon={ic_play_circle_filled} size={30}/>}
                   iconPosition="left"
                 />
@@ -88,9 +102,9 @@ const BannerSection = ({
               <PlayerWrapper>
                 <ReactPlayer
                   url='https://www.youtube.com/watch?v=khT-8kKDVgc'
-                             width="100%"
-                             height="100%"
-                             loop
+                  width="100%"
+                  height="100%"
+                  loop
                 />
               </PlayerWrapper>
               {/*<NextImage src={BannerImage} alt="banner image"/>*/}
@@ -107,6 +121,7 @@ BannerSection.propTypes = {
   contentWrapper: PropTypes.object,
   discountAmount: PropTypes.object,
   discountText: PropTypes.object,
+  winnerText: PropTypes.object,
   title: PropTypes.object,
   description: PropTypes.object,
   videoWrapper: PropTypes.object,
@@ -135,6 +150,20 @@ BannerSection.defaultProps = {
     mb: ['20px', '25px', '25px', '25px', '25px'],
     lineHeight: '1.2',
     textAlign: 'center',
+  },
+  winnerText: {
+    fontSize: ['18px', '20px', '20px', '20px', '20px'],
+    fontWeight: 'bold',
+    color: '#fff',
+    lineHeight: '1.75',
+    mb: '0',
+    textAlign: 'center',
+  },
+  winnerWrapper: {
+    borderRadius: '4px',
+    padding: '2rem',
+    border: '2px solid white',
+    marginTop: '1rem'
   },
   description: {
     fontSize: ['15px', '16px', '16px', '16px', '16px'],

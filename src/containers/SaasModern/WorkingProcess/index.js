@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Box from 'common/components/Box';
 import Text from 'common/components/Text';
 import Heading from 'common/components/Heading';
@@ -9,10 +10,10 @@ import Container from 'common/components/UI/Container';
 import ProcessItem, { ProcessIndex } from './workingProcess.style';
 import { PROCESS_ITEMS } from 'common/data/SaasModern';
 import QrCodeImage from 'common/assets/image/qrcode-raffle-20211003.png'
-import Button from "../../../common/components/Button";
 
-const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiMzAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlLCJtZXNzYWdlSXNUZXh0Ijp0cnVlfQ='
-
+const Blurred = styled.div`
+  filter: blur(4px);
+`
 
 const WorkingProcessSection = ({
   sectionWrapper,
@@ -60,10 +61,10 @@ const WorkingProcessSection = ({
         </Box>
 
         <Box {...processParticipate}>
-          <NextImage src={QrCodeImage} alt="QR Code" height={256} width={256} />
-          <a href={RaffleDeepLink}>
-            <Button {...fillButton} title="PARTICIPATE NOW"/>
-          </a>
+          <Blurred>
+           <NextImage src={QrCodeImage} alt="QR Code" height={256} width={256} />
+          </Blurred>
+          <Heading content="Raffle is over"/>
         </Box>
       </Container>
     </Box>
