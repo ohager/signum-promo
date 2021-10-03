@@ -70,7 +70,7 @@ const BannerSection = ({
             />
             <Text
               {...description}
-              content="We are running a smart contract based Raffle for the October Dev Meetup. Click the button and participate"
+              content="We are running a smart contract based Raffle for the October Dev Meetup. The Raffle is over and we have a winner"
             />
 
 
