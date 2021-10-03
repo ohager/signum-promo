@@ -69,11 +69,6 @@ const BannerSection = ({
               {...description}
               content="We are running a smart contract based Raffle for the October Dev Meetup. Click the button and participate"
             />
-
-            <Text
-              {...description}
-              content="We are running a smart contract based Raffle for the October Dev Meetup. Click the button and participate"
-            />
             <Box {...buttonWrapper}>
               <a href={RaffleDeepLink}>
                 <Button {...fillButton} title="PARTICIPATE NOW"/>
