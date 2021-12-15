@@ -318,7 +318,7 @@ export const FEATURES = [
     icon: FeatureIcon6,
     title: 'Revelation',
     description:
-      <>During the meetup we will end the puzzle, by sending a signal to the Smart Contract. The <a href="https://chain.signum.network/address/9325459780269952280" target="_blank" rel="noreferrer noopener">creators account</a> will reveal his passphrase such that all can verify the correct magic word(s)</>,
+      <>During the meetup, on December 18, 4pm UTC, we will end the puzzle, by sending a signal to the Smart Contract. The <a href="https://chain.signum.network/address/9325459780269952280" target="_blank" rel="noreferrer noopener">creators account</a> will reveal his passphrase such that all can verify the correct magic word(s)</>,
   },
   {
     icon: FeatureIcon4,
