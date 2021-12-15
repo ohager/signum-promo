@@ -65,7 +65,8 @@ const BannerSection = ({
 
   const handleChange = (text) => {
     const message = text.replace(/\s/g, '').toLowerCase()
-    const link = text ? createDeeplink({
+
+    const link = message ? createDeeplink({
       action: 'pay',
       payload: {
         // FIXME: Correct contract address
