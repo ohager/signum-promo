@@ -64,7 +64,7 @@ const BannerSection = ({
   const [deepLink, setDeepLink] = useState('')
 
   const handleChange = (text) => {
-
+    const message = text.replace(/\s/g, '').toLowerCase()
     const link = text ? createDeeplink({
       action: 'pay',
       payload: {
@@ -72,7 +72,7 @@ const BannerSection = ({
         recipient: "S-9K9L-4CB5-88Y5-F5G4Z",
         amountPlanck: 5_00000000,
         feePlanck: 735000,
-        message: text.toLowerCase(),
+        message,
         messageIsText: true,
         immutable: true,
         encrypt: false
