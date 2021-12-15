@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React, {Fragment, useState} from 'react';
 import Head from 'next/head';
-import { ThemeProvider } from 'styled-components';
+import styled, {ThemeProvider} from 'styled-components';
 import Sticky from 'react-stickynode';
-import { DrawerProvider } from 'common/contexts/DrawerContext';
-import { saasModernTheme } from 'common/theme/saasModern';
+import {DrawerProvider} from 'common/contexts/DrawerContext';
+import {saasModernTheme} from 'common/theme/saasModern';
 import ResetCSS from 'common/assets/css/style';
 import {
   GlobalStyle,
@@ -23,8 +23,19 @@ import UpdateScreen from 'containers/SaasModern/UpdateScreen';
 import TestimonialSection from 'containers/SaasModern/Testimonial';
 import Footer from 'containers/SaasModern/Footer';
 import ThumbnailUrl from 'common/assets/image/signum-promo.jpg'
+import Snowfall from "react-snowfall";
+
+const SnowContainer = styled.div`
+  height: 40%; 
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 1;
+`
 
 const SaasModern = () => {
+
   return (
     <ThemeProvider theme={saasModernTheme}>
       <Fragment>
@@ -36,7 +47,7 @@ const SaasModern = () => {
           <meta property="og:url" content="https://signum-promo.vercel.app"/>
           <meta property="og:title" content="Signum Dev Meetup Promo"/>
           <meta property="og:description" content="Checkout our upcoming Dev Meetup on Discord"/>
-          <meta property="og:image" content={ThumbnailUrl} />
+          <meta property="og:image" content={ThumbnailUrl}/>
           <meta property="twitter:card" content="summary_large_image"/>
           <meta property="twitter:url" content="https://signum-promo.vercel.app/"/>
           <meta property="twitter:title" content="Signum Dev Meetup Promo"/>
@@ -49,26 +60,28 @@ const SaasModern = () => {
           />
         </Head>
 
-        <ResetCSS />
-        <GlobalStyle />
-
+        <ResetCSS/>
+        <GlobalStyle/>
         <ContentWrapper>
+          <SnowContainer>
+            <Snowfall/>
+          </SnowContainer>
           <Sticky top={0} innerZ={9999} activeClass="sticky-nav-active">
             <DrawerProvider>
-              <Navbar />
+              <Navbar/>
             </DrawerProvider>
           </Sticky>
           <BannerSection />
           <WorkingProcessSection />
           {/*<InfoSection />*/}
-          {/*<FeatureSection />*/}
+          <FeatureSection />
           {/*<UpdateScreen />*/}
           {/*<PricingSection />*/}
           {/*<PartnerSection />*/}
           {/*<TestimonialSection />*/}
           {/*<FaqSection />*/}
           {/*<TrialSection />*/}
-          <Footer />
+          <Footer/>
         </ContentWrapper>
       </Fragment>
     </ThemeProvider>

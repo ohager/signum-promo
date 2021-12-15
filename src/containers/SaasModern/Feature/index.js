@@ -26,8 +26,8 @@ const FeatureSection = ({
     <Box {...sectionWrapper} as="section" id="feature_section">
       <Container>
         <Box {...secTitleWrapper}>
-          <Text {...secText} content="FEATURES" />
-          <Heading {...secHeading} content="Why you choose Our Plugin" />
+          <Text {...secText} content="RULES" />
+          <Heading {...secHeading} content="This is how the puzzle works" />
         </Box>
 
         <Box {...row}>

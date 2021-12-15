@@ -66,7 +66,7 @@ export const PROCESS_ITEMS = [
     image: Process3,
     title: 'Click Button Or Scan QR Code',
     description:
-      'Once you have at least 0.4 SIGNA come back to this site and click the green button, or scan the QR Code. This will open your wallet with all necessary data prefilled. Just confirm the transaction and you may win the raffle',
+      'Once you have at least 5.00735 SIGNA come back to this site, enter the magic word(s) and click the green button, or scan the QR Code. This will open your wallet with all necessary data prefilled. Just confirm the transaction and you may win one of the prizes',
   },
 ];
 
@@ -292,39 +292,39 @@ export const FOOTER_WIDGET = [
 export const FEATURES = [
   {
     icon: FeatureIcon1,
-    title: 'App Development',
+    title: 'Solve the challenge',
     description:
-      'Get your proof tests delivered home collect a sample from the news get design.',
-  },
-  {
-    icon: FeatureIcon2,
-    title: '10 Times Award',
-    description:
-      'Get your proof tests delivered home collect a sample from the news get design.',
+      'Follow the breadcrumbs given in the Discord Channel and try to get the magic word(s)',
   },
   {
     icon: FeatureIcon3,
-    title: 'Cloud Storage',
+    title: 'Send your solution',
     description:
-      'Get your proof tests delivered home collect a sample from the news get design.',
+      'If you think you got the magic word(s), enter it/them in the upper text field and click the button or scan the QR Code',
+  },
+  {
+    icon: FeatureIcon2,
+    title: '10 Winners Award',
+    description:
+      'The overall prices are 5000 SIGNA. The first ten correct solutions will get the prices with a distribution of 40%, 25%, 15% and 7x 3%.',
+  },
+  // {
+  //   icon: FeatureIcon5,
+  //   title: 'UX Planning',
+  //   description:
+  //     'Get your proof tests delivered home collect a sample from the news get design.',
+  // },
+  {
+    icon: FeatureIcon6,
+    title: 'Revelation',
+    description:
+      <>During the meetup we will end the puzzle, by sending a signal to the Smart Contract. The <a href="https://chain.signum.network/address/9325459780269952280" target="_blank" rel="noreferrer noopener">creators account</a> will reveal his passphrase such that all can verify the correct magic word(s)</>,
   },
   {
     icon: FeatureIcon4,
-    title: 'Customization',
+    title: 'SNA Donation',
     description:
-      'Get your proof tests delivered home collect a sample from the news get design.',
-  },
-  {
-    icon: FeatureIcon5,
-    title: 'UX Planning',
-    description:
-      'Get your proof tests delivered home collect a sample from the news get design.',
-  },
-  {
-    icon: FeatureIcon6,
-    title: 'Customer Support',
-    description:
-      'Get your proof tests delivered home collect a sample from the news get design.',
+      <>The Smart Contract will accumulate funds during the participation. After all prices were paid, remaining funds will be sent to the <a href="https://chain.signum.network/address/8952122635653861124" target="_blank" rel="noreferrer noopener">SNA</a></>
   },
 ];
 

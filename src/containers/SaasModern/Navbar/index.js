@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import NavbarWrapper from 'common/components/Navbar';
@@ -8,16 +8,31 @@ import Logo from 'common/components/UIElements/Logo';
 import Box from 'common/components/Box';
 import HamburgMenu from 'common/components/HamburgMenu';
 import Container from 'common/components/UI/Container';
-import { DrawerContext } from 'common/contexts/DrawerContext';
+import {DrawerContext} from 'common/contexts/DrawerContext';
 
-import { MENU_ITEMS } from 'common/data/SaasModern';
+import {MENU_ITEMS} from 'common/data/SaasModern';
 import ScrollSpyMenu from 'common/components/ScrollSpyMenu';
 
 import LogoImage from 'common/assets/image/signum-logo-white.png';
 import LogoImageAlt from 'common/assets/image/signum-logo-black.png';
+import styled from "styled-components";
+import NextImage from "../../../common/components/NextImage";
+import SantaHatImage from "../../../common/assets/image/promo/santa-hat.png";
 
-const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
-  const { state, dispatch } = useContext(DrawerContext);
+const LogoWithImageWrapper = styled.div`
+  position: relative;
+`
+
+const SantaHatContainer = styled.div`
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+`
+
+const Navbar = ({navbarStyle, logoStyle, button, row, menuWrapper}) => {
+  const {state, dispatch} = useContext(DrawerContext);
 
   // Toggle drawer
   const toggleHandler = () => {
@@ -30,20 +45,26 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
     <NavbarWrapper {...navbarStyle} className="saas_navbar">
       <Container>
         <Box {...row}>
-          <Logo
-            href="https://signum.network"
-            logoSrc={LogoImage}
-            title="Signum Logo"
-            logoStyle={logoStyle}
-            className="main-logo"
-          />
-          <Logo
-            href="#"
-            logoSrc={LogoImageAlt}
-            title="Signum Logo"
-            logoStyle={logoStyle}
-            className="logo-alt"
-          />
+          <LogoWithImageWrapper>
+            <SantaHatContainer>
+              <NextImage src={SantaHatImage} alt="Santas Hat"/>
+            </SantaHatContainer>
+            <Logo
+              href="https://signum.network"
+              logoSrc={LogoImage}
+              title="Signum Logo"
+              logoStyle={logoStyle}
+              className="main-logo"
+            >
+            </Logo>
+            <Logo
+              href="#"
+              logoSrc={LogoImageAlt}
+              title="Signum Logo"
+              logoStyle={logoStyle}
+              className="logo-alt"
+            />
+          </LogoWithImageWrapper>
           <Box {...menuWrapper}>
             <ScrollSpyMenu
               className="main_menu"
@@ -58,7 +79,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
             <Drawer
               width="420px"
               placement="right"
-              drawerHandler={<HamburgMenu barColor="#fff" />}
+              drawerHandler={<HamburgMenu barColor="#fff"/>}
               open={state.isOpen}
               toggleHandler={toggleHandler}
             >

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components'
-import Link from 'common/components/Link';
 import Icon from 'react-icons-kit';
 import Fade from 'react-reveal/Fade';
 import Box from 'common/components/Box';
@@ -12,12 +11,17 @@ import Container from 'common/components/UI/Container';
 import TiltShape from '../TiltShape';
 import {BannerWrapper, DiscountWrapper, DiscountLabel} from './banner.style';
 import {ic_play_circle_filled} from 'react-icons-kit/md/ic_play_circle_filled';
-import {ic_emoji_events_twotone} from 'react-icons-kit/md/ic_emoji_events_twotone'
+import {ic_contact_support_twotone} from 'react-icons-kit/md/ic_contact_support_twotone'
+import {trophy} from 'react-icons-kit/fa/trophy';
 import ReactPlayer from "react-player/youtube";
+import Input from "../../../common/components/Input";
+
+import {createDeeplink} from '@signumjs/util'
+import {ReactQrCode} from "@devmehq/react-qr-code";
 
 const SecLinkProps = {target: '_blank', rel: "noreferrer noopener"}
 
-const RaffleDeepLink = 'https://burst-balance-alert.now.sh/api/redirect?url=signum%3A%2F%2Fv1%3Faction%3Dpay%26payload%3DeyJyZWNpcGllbnQiOiJTLUdXVjQtUzRFSy1IQUczLUVXQ0pWIiwiYW1vdW50UGxhbmNrIjoiMzAwMDAwMDAiLCJmZWVQbGFuY2siOiIxNDcwMDAwIiwibWVzc2FnZSI6ImRldm1lZXR1cDAzMTAiLCJpbW11dGFibGUiOnRydWUsImVuY3J5cHQiOmZhbHNlLCJtZXNzYWdlSXNUZXh0Ijp0cnVlfQ='
+const withRedirectUrl = (url) => `https://burst-balance-alert.now.sh/api/redirect?url=${encodeURIComponent(url)}`
 
 const PlayerWrapper = styled.div`
   height: 240px;
@@ -35,6 +39,13 @@ const PlayerWrapper = styled.div`
   }
 `
 
+const Inline = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+`
+
 const BannerSection = ({
                          col,
                          contentWrapper,
@@ -48,49 +59,95 @@ const BannerSection = ({
                          buttonWrapper,
                          button,
                          fillButton,
+  hintButton
                        }) => {
+  const [deepLink, setDeepLink] = useState('')
+
+  const handleChange = (text) => {
+
+    const link = text ? createDeeplink({
+      action: 'pay',
+      payload: {
+        // FIXME: Correct contract address
+        recipient: "S-9K9L-4CB5-88Y5-F5G4Z",
+        amountPlanck: 5_00000000,
+        feePlanck: 735000,
+        message: text.toLowerCase(),
+        messageIsText: true,
+        immutable: true,
+        encrypt: false
+      }
+    }) : ''
+    setDeepLink(link)
+  }
+
   return (
     <BannerWrapper id="banner_section">
       <TiltShape/>
       <Container>
         <Box {...col}>
           <Box {...contentWrapper}>
-            {/*<DiscountWrapper>*/}
-            {/*  <DiscountLabel>*/}
-            {/*    <Text {...discountAmount} content="25% Save" />*/}
-            {/*    <Text*/}
-            {/*      {...discountText}*/}
-            {/*      content="for first month trail version"*/}
-            {/*    />*/}
-            {/*  </DiscountLabel>*/}
-            {/*</DiscountWrapper>*/}
             <Heading
               {...title}
-              content="October Meetup Raffle"
+              content="X-Mas Meetup Puzzle"
             />
             <Text
               {...description}
-              content="We are running a smart contract based Raffle for the October Dev Meetup. The Raffle is over and we have a winner"
+              content="We are running a smart contract based Puzzle for the X-Mas Dev Meetup. Enter the magic word(s) and press 'Participate Now', or scan the QrCode below"
             />
 
+            {/*<Box {...winnerWrapper} {...col}>*/}
+            {/*  <Text {...winnerText} content="The winner is"></Text>*/}
+            {/*  <a href="https://explorer.signum.network/?action=transaction&id=5923442789120591728" {...SecLinkProps}>*/}
+            {/*    <Button*/}
+            {/*      {...button}*/}
+            {/*      title="S-BNUE-9X8X-ATP8-FF3YB"*/}
+            {/*      icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}*/}
+            {/*      iconPosition="left"*/}
+            {/*    />*/}
+            {/*  </a>*/}
+            {/*</Box>*/}
 
-            <Box {...winnerWrapper} {...col}>
-              <Text {...winnerText} content="The winner is"></Text>
-              <a href="https://explorer.signum.network/?action=transaction&id=5923442789120591728" {...SecLinkProps}>
-                <Button
-                  {...button}
-                  title="S-BNUE-9X8X-ATP8-FF3YB"
-                  icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}
-                  iconPosition="left"
-                />
-              </a>
+            <Box>
+              <Input onChange={handleChange}/>
+              {deepLink.length === 0 ? (
+                <Box {...winnerWrapper} style={{textAlign:'center'}}>
+                  <Text {...description}
+                        content="Please enter the magic word(s) first"
+                  />
+                  <a href='./#requirements'>
+                    <Button
+                      {...hintButton}
+                      title="Requirements and Rules"
+                      icon={<Icon icon={ic_contact_support_twotone} size={16}/>}
+                      iconPosition="left"
+                    />
+                  </a>
+                </Box>
+
+              ) : (
+                <Box {...winnerWrapper}>
+                  <Text {...description} textAlign="center" content="Click or Scan"/>
+                  <Inline>
+                    <a href={withRedirectUrl(deepLink)} {...SecLinkProps}>
+                      <Button
+                        {...fillButton}
+                        title="Participate Now"
+                        icon={<Icon icon={trophy} size={30}/>}
+                        iconPosition="left"
+                      />
+                    </a>
+                    <ReactQrCode value={deepLink} renderAs={"svg"} size={128}/>
+                  </Inline>
+                </Box>
+              )
+              }
             </Box>
-
             <Box {...buttonWrapper}>
-              <a href="https://www.youtube.com/watch?v=nLrWJWTyIB8" {...SecLinkProps}>
+              <a href="https://www.youtube.com/watch?v=oDqvgtVcqZs" {...SecLinkProps}>
                 <Button
                   {...button}
-                  title="WATCH SEPTEMBER MEETUP"
+                  title="WATCH NOVEMBER MEETUP"
                   icon={<Icon icon={ic_play_circle_filled} size={30}/>}
                   iconPosition="left"
                 />
@@ -101,7 +158,7 @@ const BannerSection = ({
             <Fade bottom>
               <PlayerWrapper>
                 <ReactPlayer
-                  url='https://www.youtube.com/watch?v=khT-8kKDVgc'
+                  url='https://youtu.be/8K4fbPCo3t8'
                   width="100%"
                   height="100%"
                   loop
@@ -163,10 +220,18 @@ BannerSection.defaultProps = {
     borderRadius: '4px',
     padding: '2rem',
     border: '2px solid white',
-    marginTop: '1rem'
+    marginTop: '1rem',
+    textAlign: 'center',
   },
   description: {
     fontSize: ['15px', '16px', '16px', '16px', '16px'],
+    color: '#fff',
+    lineHeight: '1.75',
+    mb: '0',
+    textAlign: 'center',
+  },
+  hint: {
+    fontSize: ['10px', '12px', '12px', '12px', '12px'],
     color: '#fff',
     lineHeight: '1.75',
     mb: '0',
@@ -216,6 +281,16 @@ BannerSection.defaultProps = {
     color: '#fff',
     colors: 'secondary',
     height: ['40px', '46px'],
+    minHeight: 'auto',
+  },
+  hintButton: {
+    type: 'button',
+    fontSize: ['10px', '10px'],
+    borderRadius: '4px',
+    p: ['0px 8px', '0px 8px'],
+    color: '#fff',
+    colors: 'secondary',
+    height: ['32px', '32px'],
     minHeight: 'auto',
   },
 };

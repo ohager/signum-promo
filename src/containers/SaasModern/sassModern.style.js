@@ -1,8 +1,13 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import colors from 'common/theme/saasModern/colors'
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    scroll-behavior: smooth !important;
+  }
+  
   body{
     font-family: 'Roboto', sans-serif;
+    position: relative;
   }
 
   h1,

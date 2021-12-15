@@ -5,38 +5,38 @@ import Box from 'common/components/Box';
 import Text from 'common/components/Text';
 import Heading from 'common/components/Heading';
 import Image from 'common/components/Image';
-import NextImage from 'next/image'
 import Container from 'common/components/UI/Container';
-import ProcessItem, { ProcessIndex } from './workingProcess.style';
-import { PROCESS_ITEMS } from 'common/data/SaasModern';
-import QrCodeImage from 'common/assets/image/qrcode-raffle-20211003.png'
+import ProcessItem, {ProcessIndex} from './workingProcess.style';
+import {PROCESS_ITEMS} from 'common/data/SaasModern';
+import {ReactQrCode} from '@devmehq/react-qr-code';
 
 const Blurred = styled.div`
   filter: blur(4px);
 `
 
 const WorkingProcessSection = ({
-  sectionWrapper,
-  secTitleWrapper,
-  secText,
-  secHeading,
-  processRow,
-  processCol,
-  processImageStyle,
-  processTitleStyle,
-  processDescriptionStyle,
-  processParticipate,
-  fillButton,
-}) => {
+                                 sectionWrapper,
+                                 secTitleWrapper,
+                                 secText,
+                                 secHeading,
+                                 processRow,
+                                 processCol,
+                                 processImageStyle,
+                                 processTitleStyle,
+                                 processDescriptionStyle,
+                                 processParticipate,
+                                 fillButton,
+                               }) => {
   return (
     <Box {...sectionWrapper} as="section">
       <Container>
         <Box {...secTitleWrapper}>
-          <Text {...secText} content="PARTICIPATION PROCESS" />
-          <Heading
-            {...secHeading}
-            content="Follow the steps to participate"
-          />
+          <Text {...secText} content="PARTICIPATION PROCESS"/>
+            <Heading
+              id="requirements"
+              {...secHeading}
+              content="Follow the steps to participate"
+            />
         </Box>
 
         <Box {...processRow}>
@@ -58,13 +58,6 @@ const WorkingProcessSection = ({
               </ProcessItem>
             </Box>
           ))}
-        </Box>
-
-        <Box {...processParticipate}>
-          <Blurred>
-           <NextImage src={QrCodeImage} alt="QR Code" height={256} width={256} />
-          </Blurred>
-          <Heading content="Raffle is over"/>
         </Box>
       </Container>
     </Box>
@@ -147,7 +140,7 @@ WorkingProcessSection.defaultProps = {
     flexDirection: "column",
     flexWrap: "wrap",
     justifyContent: "center",
-    alignItems:"center"
+    alignItems: "center"
   },
   fillButton: {
     type: 'button',

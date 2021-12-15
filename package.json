@@ -14,9 +14,11 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
+    "@devmehq/react-qr-code": "^1.0.3",
     "@glidejs/glide": "^3.4.1",
     "@reach/accordion": "^0.16.1",
     "@redq/reuse-modal": "^1.1.9",
+    "@signumjs/util": "^1.0.0-rc.8",
     "@styled-system/theme-get": "^5.1.2",
     "animate.css": "^4.1.1",
     "firebase-admin": "^9.6.0",
@@ -56,6 +58,7 @@
     "react-scrollspy": "^3.4.3",
     "react-select": "^5.0.0",
     "react-slick": "^0.28.1",
+    "react-snowfall": "^1.1.1",
     "react-stickynode": "4.0.0",
     "react-tabs": "^3.2.2",
     "styled-components": "^5.2.1",
