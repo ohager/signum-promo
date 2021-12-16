@@ -324,7 +324,7 @@ export const FEATURES = [
     icon: FeatureIcon4,
     title: 'SNA Donation',
     description:
-      <>The Smart Contract will accumulate funds during the participation. After all prices were paid, remaining funds will be sent to the <a href="https://chain.signum.network/address/8952122635653861124" target="_blank" rel="noreferrer noopener">SNA</a></>
+      <>The Smart Contract will accumulate funds during the participation. After all prize money were paid, remaining funds will be sent to the <a href="https://chain.signum.network/address/8952122635653861124" target="_blank" rel="noreferrer noopener">SNA</a></>
   },
 ];
 
