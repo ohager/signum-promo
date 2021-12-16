@@ -109,7 +109,7 @@ const BannerSection = ({
             {/*</Box>*/}
 
             <Box>
-              <Input onChange={handleChange}/>
+              <Input onChange={handleChange} placeholder="Enter the magic word(s) here..."/>
               {deepLink.length === 0 ? (
                 <Box {...winnerWrapper} style={{textAlign:'center'}}>
                   <Text {...description}
