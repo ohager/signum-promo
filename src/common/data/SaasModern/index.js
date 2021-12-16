@@ -294,7 +294,7 @@ export const FEATURES = [
     icon: FeatureIcon1,
     title: 'Solve the challenge',
     description:
-      <>Follow the breadcrumbs given in the <a href="https://discord.gg/QHZkF4KHDS" target="_blank" rel="noreferrer noopener">Discord Channel</a> and try to find the magic word(s)</>,
+      <>Follow the breadcrumbs given in the <a href="https://discord.gg/QHZkF4KHDS" target="_blank" rel="noreferrer noopener">Discord Server</a> and try to find the magic word(s)</>,
   },
   {
     icon: FeatureIcon3,
