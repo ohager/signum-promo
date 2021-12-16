@@ -69,8 +69,7 @@ const BannerSection = ({
     const link = message ? createDeeplink({
       action: 'pay',
       payload: {
-        // FIXME: Correct contract address
-        recipient: "S-9K9L-4CB5-88Y5-F5G4Z",
+        recipient: "S-T7HA-5E8C-PFYL-9E4UE",
         amountPlanck: 5_00000000,
         feePlanck: 735000,
         message,
@@ -94,7 +93,7 @@ const BannerSection = ({
             />
             <Text
               {...description}
-              content="We are running a smart contract based Puzzle for the X-Mas Dev Meetup. Enter the magic word(s) and press 'Participate Now', or scan the QrCode below"
+              content={<>We are running a <a style={{color: "white", fontWeight: "600", textDecoration: "underline" }} href="https://github.com/deleterium/SmartC/blob/main/samples/XmasContest.smartc.c" {...SecLinkProps}>Smart Contract</a> based Puzzle for the X-Mas Dev Meetup. Enter the magic word(s) and press 'Participate Now', or scan the QrCode below</>}
             />
 
             {/*<Box {...winnerWrapper} {...col}>*/}

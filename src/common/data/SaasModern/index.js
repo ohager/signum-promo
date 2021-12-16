@@ -294,19 +294,19 @@ export const FEATURES = [
     icon: FeatureIcon1,
     title: 'Solve the challenge',
     description:
-      'Follow the breadcrumbs given in the Discord Channel and try to get the magic word(s)',
+      <>Follow the breadcrumbs given in the <a href="https://discord.gg/QHZkF4KHDS" target="_blank" rel="noreferrer noopener">Discord Channel</a> and try to find the magic word(s)</>,
   },
   {
     icon: FeatureIcon3,
     title: 'Send your solution',
     description:
-      'If you think you got the magic word(s), enter it/them in the upper text field and click the button or scan the QR Code',
+      'If you think you got the magic word(s), enter it/them in the upper text field and click the button or scan the QR Code. Participation Fee is 5 SIGNA (+ transaction fee)',
   },
   {
     icon: FeatureIcon2,
     title: '10 Winners Award',
     description:
-      'The overall prices are 5000 SIGNA. The first ten correct solutions will get the prices with a distribution of 40%, 25%, 15% and 7x 3%.',
+      'The overall prize are 5000 SIGNA. The first ten correct answers will get the prizes with a distribution of 40%, 25%, 14% and 7x 3%.',
   },
   // {
   //   icon: FeatureIcon5,
