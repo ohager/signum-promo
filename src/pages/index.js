@@ -36,6 +36,7 @@ const SnowContainer = styled.div`
 
 const SaasModern = () => {
 
+  const SeoImageUrl = `https://signum-promo.vercel.app/${ThumbnailUrl.src}`
   return (
     <ThemeProvider theme={saasModernTheme}>
       <Fragment>
@@ -47,12 +48,12 @@ const SaasModern = () => {
           <meta property="og:url" content="https://signum-promo.vercel.app"/>
           <meta property="og:title" content="Signum X-Mas Meetup Promo"/>
           <meta property="og:description" content="Checkout our Xmas Meetup on Discord with Puzzle to win Signa"/>
-          <meta property="og:image" content={ThumbnailUrl.src}/>
+          <meta property="og:image" content={SeoImageUrl}/>
           <meta property="twitter:card" content="summary_large_image"/>
           <meta property="twitter:url" content="https://signum-promo.vercel.app/"/>
           <meta property="twitter:title" content="Signum X-Mas Meetup Promo"/>
           <meta property="twitter:description" content="Checkout our Xmas Meetup on Discord with Puzzle to win Signa"/>
-          <meta property="twitter:image" content={ThumbnailUrl.src}/>
+          <meta property="twitter:image" content={SeoImageUrl}/>
           {/* Load google fonts */}
           <link
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900|Open+Sans:400,400i,600,700"
