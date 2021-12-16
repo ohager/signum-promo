@@ -53,13 +53,14 @@ const BannerSection = ({
                          discountText,
                          winnerText,
                          winnerWrapper,
+                         stepsWrapper,
                          title,
                          description,
                          videoWrapper,
                          buttonWrapper,
                          button,
                          fillButton,
-  hintButton
+                         hintButton
                        }) => {
   const [deepLink, setDeepLink] = useState('')
 
@@ -93,9 +94,10 @@ const BannerSection = ({
             />
             <Text
               {...description}
-              content={<>We are running a <a style={{color: "white", fontWeight: "600", textDecoration: "underline" }} href="https://github.com/deleterium/SmartC/blob/main/samples/XmasContest.smartc.c" {...SecLinkProps}>Smart Contract</a> based Puzzle for the X-Mas Dev Meetup. Enter the magic word(s) and press 'Participate Now', or scan the QrCode below</>}
+              content={<>This is the Meetup <a style={{color: "white", fontWeight: "600", textDecoration: "underline"}}
+                                             href="https://github.com/deleterium/SmartC/blob/main/samples/XmasContest.smartc.c" {...SecLinkProps}>Smart
+                Contract</a> based Puzzle </>}
             />
-
             {/*<Box {...winnerWrapper} {...col}>*/}
             {/*  <Text {...winnerText} content="The winner is"></Text>*/}
             {/*  <a href="https://explorer.signum.network/?action=transaction&id=5923442789120591728" {...SecLinkProps}>*/}
@@ -107,11 +109,32 @@ const BannerSection = ({
             {/*    />*/}
             {/*  </a>*/}
             {/*</Box>*/}
+            <Box {...stepsWrapper}>
+              <ol>
+                <li>
+                  <Text {...description}
+                        textAlign="start"
+                        content="Step 1 - Enter the magic word(s)"/>
+                </li>
+                <li>
+                  <Text {...description}
+                        textAlign="start"
+                        content="Step 2 - Press 'Participate Now' or scan the QR Code"/>
+
+                </li>
+                <li>
+                  <Text {...description}
+                        textAlign="start"
+                        content="Step 3 - Wait for the wallet to open and confirm the transaction"/>
+
+                </li>
+              </ol>
+            </Box>
 
             <Box>
               <Input onChange={handleChange} placeholder="Enter the magic word(s) here..."/>
               {deepLink.length === 0 ? (
-                <Box {...winnerWrapper} style={{textAlign:'center'}}>
+                <Box {...winnerWrapper} style={{textAlign: 'center'}}>
                   <Text {...description}
                         content="Please enter the magic word(s) first"
                   />
@@ -215,6 +238,10 @@ BannerSection.defaultProps = {
     lineHeight: '1.75',
     mb: '0',
     textAlign: 'center',
+  },
+  stepsWrapper: {
+    marginTop: '1rem',
+    textAlign: 'left',
   },
   winnerWrapper: {
     borderRadius: '4px',
