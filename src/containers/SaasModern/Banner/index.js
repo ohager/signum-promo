@@ -70,7 +70,7 @@ const BannerSection = ({
     const link = message ? createDeeplink({
       action: 'pay',
       payload: {
-        recipient: "S-T7HA-5E8C-PFYL-9E4UE",
+        recipient: "S-ESEV-9WP7-G9XG-2BXFK",
         amountPlanck: 5_00000000,
         feePlanck: 735000,
         message,
