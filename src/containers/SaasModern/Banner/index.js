@@ -11,7 +11,9 @@ import Container from 'common/components/UI/Container';
 import TiltShape from '../TiltShape';
 import {BannerWrapper, DiscountWrapper, DiscountLabel} from './banner.style';
 import {ic_play_circle_filled} from 'react-icons-kit/md/ic_play_circle_filled';
+import {ic_emoji_events_twotone} from 'react-icons-kit/md/ic_emoji_events_twotone';
 import {ic_contact_support_twotone} from 'react-icons-kit/md/ic_contact_support_twotone'
+import {ic_local_florist_twotone} from 'react-icons-kit/md/ic_local_florist_twotone'
 import {trophy} from 'react-icons-kit/fa/trophy';
 import ReactPlayer from "react-player/youtube";
 import Input from "../../../common/components/Input";
@@ -42,7 +44,7 @@ const PlayerWrapper = styled.div`
 const Inline = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 `
 
@@ -95,77 +97,172 @@ const BannerSection = ({
             <Text
               {...description}
               content={<>This is the Meetup <a style={{color: "white", fontWeight: "600", textDecoration: "underline"}}
-                                             href="https://github.com/deleterium/SmartC/blob/main/samples/XmasContest.smartc.c" {...SecLinkProps}>Smart
+                                               href="https://github.com/deleterium/SmartC/blob/main/samples/XmasContest.smartc.c" {...SecLinkProps}>Smart
                 Contract</a> based Puzzle </>}
             />
+            <Box {...winnerWrapper} {...col}>
+              <Text {...winnerText} content="The solution was:"/>
+              <a href="https://chain.signum.network/tx/14262989068855621329" {...SecLinkProps}>
+                <Button
+                  {...button}
+                  title="to the moon and beyond with signum"
+                  style={{fontSize: "1.5em"}}
+                />
+              </a>
+            </Box>
+
             {/*<Box {...winnerWrapper} {...col}>*/}
-            {/*  <Text {...winnerText} content="The winner is"></Text>*/}
-            {/*  <a href="https://explorer.signum.network/?action=transaction&id=5923442789120591728" {...SecLinkProps}>*/}
-            {/*    <Button*/}
-            {/*      {...button}*/}
-            {/*      title="S-BNUE-9X8X-ATP8-FF3YB"*/}
-            {/*      icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}*/}
-            {/*      iconPosition="left"*/}
-            {/*    />*/}
-            {/*  </a>*/}
+            {/*
+
+              <Text {...winnerText} content="The winners are"></Text>*/}
+
+            {/*  <Box>*/}
+
+            {/*    <Inline>*/}
+            {/*      <Text {...winnerText} content="1st"></Text>*/}
+            {/*      <a href="https://chain.signum.network/tx/6680060990664405073" {...SecLinkProps}>*/}
+            {/*        <Button*/}
+            {/*          {...button}*/}
+            {/*          title="S-6LQW-7TP3-WZQC-2TSD6 (falconalex91)"*/}
+            {/*          icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}*/}
+            {/*          iconPosition="left"*/}
+            {/*        />*/}
+            {/*      </a>*/}
+            {/*    </Inline>*/}
+            {/*    <Inline>*/}
+            {/*    </Inline>*/}
+            {/*    <Inline>*/}
+            {/*    </Inline>*/}
+            {/*  </Box>*/}
             {/*</Box>*/}
             <Box {...stepsWrapper}>
               <ol>
                 <li>
-                  <Text {...description}
-                        textAlign="start"
-                        content="Step 1 - Enter the magic word(s)"/>
+                  <Inline>
+                    <Text {...winnerText} content="Congratz all the winners"/>
+                  </Inline>
+                </li>
+
+                <li>
+                  <Inline>
+                    <Text {...winnerText} content="1st"/>
+                    <a href="https://chain.signum.network/tx/6680060990664405073" {...SecLinkProps}>
+                      <Button
+                        {...button}
+                        title="S-6LQW-7TP3-WZQC-2TSD6 (falconalex91)"
+                        icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}
+                        iconPosition="left"
+                      />
+                    </a>
+                  </Inline>
                 </li>
                 <li>
-                  <Text {...description}
-                        textAlign="start"
-                        content="Step 2 - Press 'Participate Now' or scan the QR Code"/>
-
+                  <Inline>
+                    <Text {...winnerText} content="2nd"/>
+                    <a href="https://chain.signum.network/tx/1592168158269548683" {...SecLinkProps}>
+                      <Button
+                        {...button}
+                        title="S-8DFJ-DZVB-ZWN8-G99HB (Puddle Jumper)"
+                        icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}
+                        iconPosition="left"
+                      />
+                    </a>
+                  </Inline>
                 </li>
                 <li>
-                  <Text {...description}
-                        textAlign="start"
-                        content="Step 3 - Wait for the wallet to open and confirm the transaction"/>
+                  <Inline>
+                    <Text {...winnerText} content="3rd"/>
+                    <a href="https://chain.signum.network/tx/8378370603297224792" {...SecLinkProps}>
+                      <Button
+                        {...button}
+                        title="S-MYD4-GMW2-85DL-9SJ3W (F-302)"
+                        icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}
+                        iconPosition="left"
+                      />
+                    </a>
+                  </Inline>
+                </li>
+                <li>
+                  <Inline>
 
+                    <Text {...winnerText} content="4th+"/>
+                    <a href="https://chain.signum.network/tx/7441016481578533860" {...SecLinkProps}>
+                      <Button
+                        {...button}
+                        title="S-4URW-QD2Z-72YT-FTQUJ (wolverine10)"
+                        icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}
+                        iconPosition="left"
+                      />
+                    </a>
+                  </Inline>
+                </li>
+                <li>
+                  <Inline>
+                    <Text {...winnerText} content="4th+"/>
+                    <a href="https://chain.signum.network/tx/9604838836114221529" {...SecLinkProps}>
+                      <Button
+                        {...button}
+                        title="S-BHGT-NTCV-K4VS-ACTUZ"
+                        icon={<Icon icon={ic_emoji_events_twotone} size={30}/>}
+                        iconPosition="left"
+                      />
+                    </a>
+                  </Inline>
+                </li>
+                <li>
+                  <Text/>
+                </li>
+                <li>
+                  <Inline>
+                    <Text {...winnerText} content="SNA"/>
+                    <a href="https://chain.signum.network/tx/4322329816993246248" {...SecLinkProps}>
+                      <Button
+                        {...button}
+                        title="SNA Donation: 904.89 SIGNA"
+                        icon={<Icon icon={ic_local_florist_twotone} size={30}/>}
+                        iconPosition="left"
+                      />
+                    </a>
+                  </Inline>
                 </li>
               </ol>
             </Box>
 
-            <Box>
-              <Input onChange={handleChange} placeholder="Enter the magic word(s) here..."/>
-              {deepLink.length === 0 ? (
-                <Box {...winnerWrapper} style={{textAlign: 'center'}}>
-                  <Text {...description}
-                        content="Please enter the magic word(s) first"
-                  />
-                  <a href='./#requirements'>
-                    <Button
-                      {...hintButton}
-                      title="Requirements and Rules"
-                      icon={<Icon icon={ic_contact_support_twotone} size={16}/>}
-                      iconPosition="left"
-                    />
-                  </a>
-                </Box>
+            {/*<Box>*/}
+            {/*  <Input onChange={handleChange} placeholder="Enter the magic word(s) here..."/>*/}
+            {/*  {deepLink.length === 0 ? (*/}
+            {/*    <Box {...winnerWrapper} style={{textAlign: 'center'}}>*/}
+            {/*      <Text {...description}*/}
+            {/*            content="Please enter the magic word(s) first"*/}
+            {/*      />*/}
+            {/*      <a href='./#requirements'>*/}
+            {/*        <Button*/}
+            {/*          {...hintButton}*/}
+            {/*          title="Requirements and Rules"*/}
+            {/*          icon={<Icon icon={ic_contact_support_twotone} size={16}/>}*/}
+            {/*          iconPosition="left"*/}
+            {/*        />*/}
+            {/*      </a>*/}
+            {/*    </Box>*/}
 
-              ) : (
-                <Box {...winnerWrapper}>
-                  <Text {...description} textAlign="center" content="Click or Scan"/>
-                  <Inline>
-                    <a href={withRedirectUrl(deepLink)} {...SecLinkProps}>
-                      <Button
-                        {...fillButton}
-                        title="Participate Now"
-                        icon={<Icon icon={trophy} size={30}/>}
-                        iconPosition="left"
-                      />
-                    </a>
-                    <ReactQrCode value={deepLink} renderAs={"svg"} size={128}/>
-                  </Inline>
-                </Box>
-              )
-              }
-            </Box>
+            {/*  ) : (*/}
+            {/*    <Box {...winnerWrapper}>*/}
+            {/*      <Text {...description} textAlign="center" content="Click or Scan"/>*/}
+            {/*      <Inline>*/}
+            {/*        <a href={withRedirectUrl(deepLink)} {...SecLinkProps}>*/}
+            {/*          <Button*/}
+            {/*            {...fillButton}*/}
+            {/*            title="Participate Now"*/}
+            {/*            icon={<Icon icon={trophy} size={30}/>}*/}
+            {/*            iconPosition="left"*/}
+            {/*          />*/}
+            {/*        </a>*/}
+            {/*        <ReactQrCode value={deepLink} renderAs={"svg"} size={128}/>*/}
+            {/*      </Inline>*/}
+            {/*    </Box>*/}
+            {/*  )*/}
+            {/*  }*/}
+            {/*</Box>*/}
             <Box {...buttonWrapper}>
               <a href="https://www.youtube.com/watch?v=oDqvgtVcqZs" {...SecLinkProps}>
                 <Button
@@ -237,18 +334,19 @@ BannerSection.defaultProps = {
     color: '#fff',
     lineHeight: '1.75',
     mb: '0',
-    textAlign: 'center',
   },
   stepsWrapper: {
     marginTop: '1rem',
-    textAlign: 'left',
+    borderRadius: '4px',
+    padding: '2rem',
+    border: '2px solid white',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: 'flex-start',
   },
   winnerWrapper: {
     borderRadius: '4px',
     padding: '2rem',
-    border: '2px solid white',
-    marginTop: '1rem',
-    textAlign: 'center',
   },
   description: {
     fontSize: ['15px', '16px', '16px', '16px', '16px'],
